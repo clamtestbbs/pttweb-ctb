@@ -1,0 +1,24 @@
+{{define "ROOT"}}<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{template "TITLE" .}}</title>
+	<link rel="stylesheet" type="text/css" href="//www.clam.moe/resources/v2.27-ctb01/bbs-common.css">
+	<link rel="stylesheet" type="text/css" href="//www.clam.moe/resources/v2.27-ctb01/bbs-base.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="//www.clam.moe/resources/v2.27-ctb01/bbs-custom.css">
+	<link rel="stylesheet" type="text/css" href="//www.clam.moe/resources/v2.27-ctb01/pushstream.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="//www.clam.moe/resources/v2.27-ctb01/bbs-print.css" media="print">
+</head>
+<body>
+
+{{template "TOPBAR-CONTAINER" .}}
+{{template "MAIN-CONTAINER" .}}
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="//www.clam.moe/resources/v2.27-ctb01/bbs.js"></script>
+	<!-- Google Analytics -->
+</body>
+</html>
+{{end}}
+
+{{define "XX"}}{{.Title}}{{end}}
