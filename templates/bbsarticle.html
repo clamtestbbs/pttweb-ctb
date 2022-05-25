@@ -1,4 +1,3 @@
-
 {{define "TOPBAR-CONTAINER"}}<div id="topbar-container">
 	<div id="topbar" class="bbs-content">
 		<a id="logo" href="/bbs/">殼層體驗</a>
@@ -16,11 +15,9 @@
 </div>{{end}}
 
 {{define "MAIN-CONTAINER"}}<div id="main-container">
-	<div id="main-content" class="bbs-screen bbs-content">{{.Content}}</div>
-	
+    <pre><div id="main-content" class="bbs-screen bbs-content">{{.Content}}</div></pre>
     <div id="article-polling" data-pollurl="{{.PollUrl}}" data-longpollurl="{{.LongPollUrl}}" data-offset="{{.CurrOffset}}"></div>
 {{.ContentTail}}
 </div>{{end}}
-
 
 {{define "TITLE"}}{{.Title}} - 看板 {{.Board.BrdName}} - 殼層體驗{{end}}
