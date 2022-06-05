@@ -51,10 +51,36 @@
 					</div>
 				</div>
 				<div class="date">{{$article.Date}}</div>
-				<div class="mark"></div>
+				<!-- <div class="mark">{{$article.FileMode}}</div> -->
+				<div class="mark">{{if eq $article.FileMode 2}}m{{end}}{{if eq $article.FileMode 16}}s{{end}}{{if eq $article.FileMode 18}}!{{end}}{{if eq $article.FileMode 0}} {{end}}</div>
 			</div>
 		</div>
+		{{end}}
+
+		<div class="r-list-sep"></div>
+
+		{{range $article := .Bottoms}}
+		<div class="r-ent">
+			<div class="nrec">{{colored_counter $article.Recommend}}</div>
+			<div class="title">
 			
+				<a href="/bbs/{{$.Board.BrdName}}/{{$article.FileName}}.html">{{$article.Title}}</a>
+
+			</div>
+			<div class="meta">
+				<div class="author">{{$article.Owner}}</div>
+				<div class="article-menu">
+					<div class="trigger">&#x22ef;</div>
+					<div class="dropdown">
+						<div class="item"><a href="/bbs/{{$.Board.BrdName}}/search?q={{route_search_thread $.Board $article.Title }}">搜尋同標題文章</a></div>
+
+						<div class="item"><a href="/bbs/{{$.Board.BrdName}}/search?q={{route_search_author $.Board $article.Owner }}">搜尋看板內 {{$article.Owner}} 的文章</a></div>
+					</div>
+				</div>
+				<div class="date">{{$article.Date}}</div>
+				<div class="mark">{{if eq $article.FileMode 10}}m{{end}}{{if eq $article.FileMode 24}}s{{end}}{{if eq $article.FileMode 26}}!{{end}}{{if eq $article.FileMode 8}} {{end}}</div>
+			</div>
+		</div>
 		{{end}}
 	</div>
 </div>{{end}}
